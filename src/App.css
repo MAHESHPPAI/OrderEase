@@ -1,0 +1,55 @@
+.signup-3d {
+  border-radius: 1rem;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.signup-3d:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d {
+  box-shadow: 0 5px #0a58ca;
+  transition: transform 0.1s ease-in-out;
+}
+
+.btn-3d:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px #0a58ca;
+}
+
+.login-3d {
+  border-radius: 1rem;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.login-3d:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d {
+  box-shadow: 0 5px #0a58ca;
+  transition: transform 0.1s ease-in-out;
+}
+
+.btn-3d:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px #0a58ca;
+}
+
+.place-order-btn {
+  width: 100%; /* Makes the button full width inside the card */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.place-order-btn:hover {
+  transform: translateY(-3px);
+  
+}
+
+
