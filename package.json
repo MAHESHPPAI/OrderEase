@@ -2,7 +2,10 @@
   "name": "restaurant-management-web-application",
   "private": true,
   "version": "0.0.0",
-  
+  "engines": {
+    "node": "18.x",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
