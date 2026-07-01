@@ -12,7 +12,7 @@ import menu1 from '../images/ButterChicken.webp';
 import menu2 from '../images/paneer-tikka.jpg';
 import menu3 from '../images/Chicken-Biryani.jpg';
 import menu4 from '../images/Masala-Dosa.avif';
-import menu5 from '../images/Veg-pulao.jpg';
+import menu5 from '../images/Veg-Pulao.jpg';
 import menu6 from '../images/Chocolate-Donut.jpg';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
@@ -130,35 +130,37 @@ const handlePlaceOrder = (item) => {
         style={{ 
           background: 'black', 
           backdropFilter: 'blur(10px)', 
-          height: '80px', 
-          zIndex: 1000 
+          minHeight: '80px',
+          zIndex: 1000,
+          padding: '0.5rem 1rem'
         }} 
         className="navbar-light border-bottom"
       >
-        <Container>
-          <Navbar.Brand className="fw-bold text-danger fs-2">OrderEase</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Container fluid className="px-3 px-md-4">
+          <Navbar.Brand className="fw-bold text-danger fs-2 fs-md-2 fs-sm-4">OrderEase</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-danger" style={{ backgroundColor: '#dc3545' }} />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto align-items-center">
+            <Nav className="ms-auto align-items-lg-center">
               {!user ? (
                 <>
-                 <Nav.Link as={Link} to="/signup" className="text-danger fw-semibold me-3">Sign Up</Nav.Link>
-<Nav.Link as={Link} to="/login" className="text-danger fw-semibold me-3">Login</Nav.Link>
-                  <Nav.Link className="text-danger fw-semibold me-3" onClick={scrollToAboutUs}>About Us</Nav.Link>
+                 <Nav.Link as={Link} to="/signup" className="text-danger fw-semibold me-3 my-2 my-lg-0">Sign Up</Nav.Link>
+                 <Nav.Link as={Link} to="/login" className="text-danger fw-semibold me-3 my-2 my-lg-0">Login</Nav.Link>
+                 <Nav.Link className="text-danger fw-semibold me-3 my-2 my-lg-0" onClick={scrollToAboutUs}>About Us</Nav.Link>
                 </>
               ) : (
                 <>
-                  <Nav.Link className="text-danger fw-semibold me-3" onClick={scrollToFoodMenu}>Order</Nav.Link>
+                  <Nav.Link className="text-danger fw-semibold me-3 my-2 my-lg-0" onClick={scrollToFoodMenu}>Order</Nav.Link>
                   <NavDropdown 
                     title={<span className="text-danger fw-semibold">My Profile</span>} 
                     id="profile-dropdown" 
+                    className="my-2 my-lg-0"
                     style={{ zIndex: 1050 }}
                   >
                     <NavDropdown.Item as={Link} to="/profile" className="text-danger">My Orders</NavDropdown.Item>
     
                   </NavDropdown>
-                  <Nav.Link className="text-danger fw-semibold me-3" onClick={scrollToAboutUs}>About Us</Nav.Link>
-                  <Button variant="outline-danger" className="ms-3 fw-semibold" onClick={handleLogout}>Logout</Button>
+                  <Nav.Link className="text-danger fw-semibold me-3 my-2 my-lg-0" onClick={scrollToAboutUs}>About Us</Nav.Link>
+                  <Button variant="outline-danger" className="ms-lg-3 fw-semibold my-2 my-lg-0 w-100 w-lg-auto" onClick={handleLogout}>Logout</Button>
                 </>
               )}
             </Nav>
@@ -172,7 +174,12 @@ const handlePlaceOrder = (item) => {
             className="d-block w-100"
             src={pic1}
             alt="First slide"
-            style={{ height: 'calc(100vh - 80px)', objectFit: 'cover', marginTop: '-1px' }}
+            style={{ 
+              height: 'calc(100vh - 80px)', 
+              minHeight: '400px',
+              objectFit: 'cover', 
+              marginTop: '-1px' 
+            }}
           />
           <Carousel.Caption
             style={{
@@ -181,13 +188,16 @@ const handlePlaceOrder = (item) => {
               bottom: 'unset',
               textAlign: 'center',
               backgroundColor: 'rgba(0, 0, 0, 0.4)',
-              padding: '1.5rem',
+              padding: '1rem',
               borderRadius: '12px',
+              left: '5%',
+              right: '5%',
             }}
           >
-            <h1 className="display-4 fw-bold text-light">Delicious Food Delivered Fast</h1>
-            <p className="lead text-light">Experience quick and tasty meals with OrderEase.</p>
-            <Button variant="danger" size="lg" className="mt-3" onClick={scrollToFoodMenu}>Order Now</Button>
+            <h1 className="display-6 display-md-4 fw-bold text-light mb-2 mb-md-3">Delicious Food Delivered Fast</h1>
+            <p className="lead text-light d-none d-md-block">Experience quick and tasty meals with OrderEase.</p>
+            <p className="text-light d-md-none small">Experience quick and tasty meals with OrderEase.</p>
+            <Button variant="danger" size="lg" className="mt-2 mt-md-3" onClick={scrollToFoodMenu}>Order Now</Button>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -196,7 +206,12 @@ const handlePlaceOrder = (item) => {
             className="d-block w-100"
             src={pic2}
             alt="Second slide"
-            style={{ height: 'calc(100vh - 80px)', objectFit: 'cover', marginTop: '-1px' }}
+            style={{ 
+              height: 'calc(100vh - 80px)', 
+              minHeight: '400px',
+              objectFit: 'cover', 
+              marginTop: '-1px' 
+            }}
           />
           <Carousel.Caption
             style={{
@@ -205,13 +220,16 @@ const handlePlaceOrder = (item) => {
               bottom: 'unset',
               textAlign: 'center',
               backgroundColor: 'rgba(0, 0, 0, 0.13)',
-              padding: '1.5rem',
+              padding: '1rem',
               borderRadius: '12px',
+              left: '5%',
+              right: '5%',
             }}
           >
-            <h1 className="display-4 fw-bold text-light">Your Favourite Dishes, Anytime</h1>
-            <p className="lead text-light">Craving something special? We've got it covered.</p>
-            <Button variant="danger" size="lg" className="mt-3" onClick={scrollToFoodMenu}>Order Now</Button>
+            <h1 className="display-6 display-md-4 fw-bold text-light mb-2 mb-md-3">Your Favourite Dishes, Anytime</h1>
+            <p className="lead text-light d-none d-md-block">Craving something special? We've got it covered.</p>
+            <p className="text-light d-md-none small">Craving something special? We've got it covered.</p>
+            <Button variant="danger" size="lg" className="mt-2 mt-md-3" onClick={scrollToFoodMenu}>Order Now</Button>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -220,7 +238,12 @@ const handlePlaceOrder = (item) => {
             className="d-block w-100"
             src={pic3}
             alt="Third slide"
-            style={{ height: 'calc(100vh - 80px)', objectFit: 'cover', marginTop: '-1px' }}
+            style={{ 
+              height: 'calc(100vh - 80px)', 
+              minHeight: '400px',
+              objectFit: 'cover', 
+              marginTop: '-1px' 
+            }}
           />
           <Carousel.Caption
             style={{
@@ -228,89 +251,90 @@ const handlePlaceOrder = (item) => {
               transform: 'translateY(-50%)',
               bottom: 'unset',
               textAlign: 'center',
-              padding: '1.5rem',
+              padding: '1rem',
               borderRadius: '12px',
+              left: '5%',
+              right: '5%',
             }}
           >
-            <h1 className="display-4 fw-bold text-light">Fast. Fresh. Fabulous.</h1>
-            <p className="lead text-light">Join thousands who love OrderEase every day.</p>
-            <Button variant="danger" size="lg" className="mt-3" onClick={scrollToFoodMenu}>Order Now</Button>
+            <h1 className="display-6 display-md-4 fw-bold text-light mb-2 mb-md-3">Fast. Fresh. Fabulous.</h1>
+            <p className="lead text-light d-none d-md-block">Join thousands who love OrderEase every day.</p>
+            <p className="text-light d-md-none small">Join thousands who love OrderEase every day.</p>
+            <Button variant="danger" size="lg" className="mt-2 mt-md-3" onClick={scrollToFoodMenu}>Order Now</Button>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
 
-     <div style={{ backgroundColor: 'black', padding: '4rem 2rem' }} ref={foodMenuRef}>
-  <h2 className="text-center text-danger mb-5 display-5 fw-bold">Food Menu</h2>
+     <div style={{ backgroundColor: 'black', padding: '2rem 1rem' }} className="py-md-5 px-md-4" ref={foodMenuRef}>
+  <h2 className="text-center text-danger mb-4 mb-md-5 display-6 display-md-5 fw-bold">Food Menu</h2>
   <Container>
-    {!user ? (
-      <div className="alert alert-warning text-center">
-        <h5 className="text-danger">To order please Login or SignUp</h5>
-        <div className="mt-3">
-          <a href="/login" className="btn btn-danger me-2">Login</a>
-          <a href="/register" className="btn btn-danger">Sign Up</a>
+    {!user && (
+      <div className="alert alert-warning text-center mb-3 mb-md-4 mx-2 mx-md-0">
+        <h5 className="text-danger mb-3">To order please Login or SignUp</h5>
+        <div className="mt-3 d-flex flex-column flex-sm-row justify-content-center gap-2">
+          <Link to="/login" className="btn btn-danger">Login</Link>
+          <Link to="/signup" className="btn btn-danger">Sign Up</Link>
         </div>
       </div>
-    ) : (
-      <>
-        {loading && <p className="text-white text-center">Loading food items...</p>}
-        {error && <p className="text-danger text-center">{error}</p>}
-
-  <div className="row justify-content-center g-4">
-  {items.filter(item => item.isAvailable).map((item) => {
-    const details = orderDetails[item.id] || { quantity: 1, tableNumber: '' }; // Default values
-
-    return (
-      <div className="col-md-4 d-flex justify-content-center" key={item.id}>
-        <div className="card text-white bg-dark" style={{ width: '18rem' }}>
-          <img 
-            src={foodImages[item.name] || ''} 
-            className="card-img-top" 
-            alt={item.name} 
-            style={{ height: '140px' }}
-          />
-          <div className="card-body text-center">
-            <h5 className="card-title">{item.name} – ₹{item.price}</h5>
-            <p className="card-text">{item.description}</p>
-            <div className="d-flex justify-content-center align-items-center mb-2">
-              <button 
-                className="btn btn-light me-2" 
-                onClick={() => handleQuantityChange(item.id, -1)}
-              >
-                -
-              </button>
-              <span className="text-white">{details.quantity}</span>
-              <button 
-                className="btn btn-light ms-2" 
-                onClick={() => handleQuantityChange(item.id, 1)}
-              >
-                +
-              </button>
-            </div>
-            <input 
-              type="number" 
-              value={details.tableNumber || ''} 
-              onChange={(e) => handleTableNumberChange(item.id, e.target.value)} 
-              className="form-control mb-2" 
-              placeholder="Table Number" 
-            />
-            <button 
-              className="btn btn-danger text-white mt-1"
-              onClick={() => handlePlaceOrder(item)}
-            >
-              Place Order
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  })}
-</div>
-
-
-
-
-      </>
     )}
+    
+    {loading && <p className="text-white text-center">Loading food items...</p>}
+    {error && <p className="text-danger text-center px-3">{error}</p>}
+
+    <div className="row justify-content-center g-3 g-md-4 px-2 px-md-0">
+      {items.filter(item => item.isAvailable).map((item) => {
+        const details = orderDetails[item.id] || { quantity: 1, tableNumber: '' };
+
+        return (
+          <div className="col-12 col-sm-6 col-md-4 d-flex justify-content-center" key={item.id}>
+            <div className="card text-white bg-dark w-100" style={{ maxWidth: '18rem' }}>
+              <img 
+                src={foodImages[item.name] || ''} 
+                className="card-img-top" 
+                alt={item.name} 
+                style={{ height: '140px', objectFit: 'cover' }}
+              />
+              <div className="card-body text-center">
+                <h5 className="card-title">{item.name} – ₹{item.price}</h5>
+                <p className="card-text small">{item.description}</p>
+                <div className="d-flex justify-content-center align-items-center mb-3">
+                  <button 
+                    className="btn btn-light btn-sm me-2 px-3" 
+                    onClick={() => handleQuantityChange(item.id, -1)}
+                    disabled={!user}
+                  >
+                    -
+                  </button>
+                  <span className="text-white mx-2">{details.quantity}</span>
+                  <button 
+                    className="btn btn-light btn-sm ms-2 px-3" 
+                    onClick={() => handleQuantityChange(item.id, 1)}
+                    disabled={!user}
+                  >
+                    +
+                  </button>
+                </div>
+                <input 
+                  type="number" 
+                  value={details.tableNumber || ''} 
+                  onChange={(e) => handleTableNumberChange(item.id, e.target.value)} 
+                  className="form-control mb-3" 
+                  placeholder="Table Number"
+                  disabled={!user}
+                />
+                <button 
+                  className="btn btn-danger text-white mt-1 w-100"
+                  onClick={() => handlePlaceOrder(item)}
+                  disabled={!user}
+                >
+                  {user ? 'Place Order' : 'Login to Order'}
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   </Container>
 </div>
 
