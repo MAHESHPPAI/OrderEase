@@ -8,7 +8,7 @@ import menu1 from '../images/ButterChicken.webp';
 import menu2 from '../images/paneer-tikka.jpg';
 import menu3 from '../images/Chicken-Biryani.jpg';
 import menu4 from '../images/Masala-Dosa.avif';
-import menu5 from '../images/Veg-pulao.jpg';
+import menu5 from '../images/Veg-Pulao.jpg';
 import menu6 from '../images/Chocolate-Donut.jpg';
 
 const foodImages = {
